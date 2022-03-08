@@ -32,7 +32,7 @@ const items = {
       const { id: myid } = req.params;
       const task = await Tasks.findOne({ _id: myid });
       if (!task) return res.status(404).json({ msg: "not found id error" });
-      res.json({ task });
+      res.json(task);
     } catch (error) {
       res.status(404).json({ msg: "not found" });
     }
@@ -45,7 +45,7 @@ const items = {
         runValidators: true,
       });
       if (!task) return res.status(404).json({ msg: "not found id error" });
-      res.json({ task });
+      res.json(task);
     } catch (error) {
       res.status(404).json({ msg: "not found" });
     }
